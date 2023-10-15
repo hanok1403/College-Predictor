@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>College predictor</title>
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+    <!-- Main CSS-->
+    <link href="/static/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">College Predictor</h2>
+                    <form action="{{url_for('welcome')}}" method="post">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="name"  required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text"  name="last_name">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Estimated Rank</label>
+                                    <input class="input--style-4" type="number" name="rank" required >
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio"  name="gender"  required>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="input-group">
+                                <label class="label">Course</label>
+                                <div class="datalist">
+                                    <input list="course" name="course" id="c" required>
+                                    <datalist id="course">
+                                        <option value="CSE" selected>CSE</option>
+                                        <option value="CSM">CSM</option>
+                                        <option value="ECE">ECE</option>
+                                        <option value="EEE">EEE</option>
+                                        <option value="MEC">MEC</option>
+                                        <option value="CIV">CIV</option>
+                                        <option value="CSD">CSD</option>
+                                        <option value="CSO">CSO</option>
+                                        <option value="INF">INF</option>
+                                        <option value="MIN">MIN</option>
+                                        <option value="PHM">PHM</option>
+                                        <option value="PHD">PHD</option>
+                                        <option value="CSC">CSC</option>
+                                        <option value="CSW">CSW</option>
+                                        <option value="CSN">CSN</option>
+                                        <option value="AID">AID</option>
+                                        <option value="BME">BME</option>
+                                        <option value="CHE">CHE</option>
+                                        <option value="CSB">CSB</option>
+                                        <option value="PHE">PHE</option>
+                                        <option value="AGR">AGR</option>
+                                        <option value="BIO">BIO</option>
+                                        <option value="CIC">CIC</option>
+                                        <option value="DRG">DRG</option>
+                                        <option value="FDT">FDT</option>
+                                        <option value="CSG">CSG</option>
+                                        <option value="AIM">AIM</option>
+                                        <option value="CSI">CSI</option>
+                                        <option value="EIE">EIE</option>
+                                        <option value="AI">AI</option>
+                                        <option value="CST">CST</option>
+                                        <option value="ETM">ETM</option>
+                                        <option value="ANE">ANE</option>
+                                        <option value="ECM">ECM</option>
+                                        <option value="DTD">DTD</option>
+                                        <option value="FSP">FSP</option>
+                                        <option value="PLG">PLG</option>
+                                        <option value="MET">MET</option>
+                                        <option value="MMS">MMS</option>
+                                        <option value="MTE">MTE</option>
+                                        <option value="TEX">TEX</option>
+                                        <option value="ECI">ECI</option>
+                                        <option value="MCT">MCT</option>
+                                        <option value="MMT">MMT</option>
+                                        <option value="AUT">AUT</option>
+                                        <option value="ARB">ARB</option>
+                                        <option value="CME">CME</option>
+                                    </datalist>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        <div class="input-group">
+                            <label class="label">Caste</label>
+                            <div class="datalist">
+                                <input list="caste" name="caste" required>
+                                <datalist id="caste">
+                                    <option value="1" selected>OC</option>
+                                    <option value="2">BC_A</option>
+                                    <option value="3">BC_B</option>
+                                    <option value="4">BC_C</option>
+                                    <option value="5">BC_D</option>
+                                    <option value="6">BC_E</option>
+                                    <option value="7">SC</option>
+                                    <option value="8">ST</option>
+                                    <option value="9">EWS GEN OU</option>
+                                </datalist>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

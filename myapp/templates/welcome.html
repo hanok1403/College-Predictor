@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Colleges list</title>
+  <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+  <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 ">
+    <div class="wrapper wrapper--w680">
+      <div class="card card-4 ">
+          <div class="card-body">
+              <h1 class="title">College Predictor</h1>
+                  <table>
+                    <tr>
+                      <th>COLLEGE</th>
+                      <th>CUTOFF</th>
+                    </tr>
+                    {% for i,j in l1.items() %}
+                    <tr>
+                      <td>{{i}}</td>
+                      <td><div class="r">{{j}}</div></td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+          </div>
+      </div>
+  </div>
+</body>
+
+</html>
