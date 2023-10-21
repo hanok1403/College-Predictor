@@ -22,13 +22,8 @@ def welcome():
         rank=int(rank)
         caste=int(caste)
         l=rankCalculator(rank=rank,gender=gender,course=course,caste=caste)
-        l1=l[0]
-        l2=l[1]
-        return render_template("welcome.html",l1=l1,l2=l2)
-    
+        return render_template("welcome.html",l1=l,name=name)
+
     return 'ok'
 
 
-
-if __name__== "__main__":
-    app.run()
